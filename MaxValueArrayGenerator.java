@@ -16,7 +16,7 @@ public class MaxValueArrayGenerator {
 
         Random random = new Random();
         loader.write("");
-        for(int x = 0; x<Integer.MAX_VALUE; x++)
+        for(int x = 0; x<50000000; x++)
         {
             //Formula for generating integers is (max - min) + min;
             //In this case our range is -9999999 to 9999999 
