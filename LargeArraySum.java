@@ -16,19 +16,29 @@ public class LargeArraySum {
     public static List<Integer> largestArraySum(List<Integer> myArray, int bottomPos, int topPos)
     {
         //If the two positions have not collided, continue with the array. 
-        if(bottomPos < topPos)
+        if(bottomPos <= topPos)
         {
+            if(topPos > myArray.size()){
+                topPos = myArray.size();
+            }
             //Taking the middle position between the top and bottom
             int middle = bottomPos + (topPos - bottomPos)/2;
 
             //The array with the largest sum should not have any negatives.
-            //Thus as a result, whenever 
+            //Thus as a result, whenever we find a negative number, we remove it. 
             if(myArray.get(middle) < 0)
             {
+                // System.out.println("Purge fired");
+                // System.out.println("Top is ::" + topPos);
+                // System.out.println("Middle is :: " + middle);
+                // System.out.println("Bottom is :: "+ bottomPos);
+                // System.out.println("Array Contents :: " + myArray.toString());
                 myArray.remove(myArray.get(middle));
+                // middle -=1;
+                // topPos -=1;
             }
             largestArraySum(myArray, bottomPos, middle - 1);
-            largestArraySum(myArray, middle, topPos);
+            largestArraySum(myArray, middle + 1, topPos);
         }
         return myArray;
     }
