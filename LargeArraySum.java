@@ -3,7 +3,6 @@
     where we find the array with the largest possible sum. 
 */
 
-
 //Imports needed
 import java.util.*;
 import java.io.*;
@@ -15,7 +14,9 @@ public class LargeArraySum {
     //an integer to indicate the bottom position and the top position. 
     public static List<Integer> largestArraySum(List<Integer> myArray, int bottomPos, int topPos)
     {
-        //Original binary search style method used to search the array. 
+        //Original binary search style method used to search the array.
+        //Did not work because removals would alter the list size,
+        //resulting in out of bounds errors in the top half of the search.  
         /*
         //If the two positions have not collided, continue with the array. 
         if(bottomPos <= topPos)
@@ -34,9 +35,25 @@ public class LargeArraySum {
         }
         */ 
 
-        //Turns out this exists!
-        myArray.removeIf(value -> value < 0);
+        //Methods making uses of streams and built in methods
 
+        //Storing the contents of the arraylist into an array
+        //This allows us to make use of streams. 
+        Integer []myArrayAsIntArr = new Integer[myArray.size()];
+        myArrayAsIntArr = myArray.toArray(myArrayAsIntArr);
+
+        //Using the stream to check if all numbers of an arraylist are negative. 
+        if(Arrays.stream(myArrayAsIntArr).allMatch(value -> value < 0))
+        {
+            //Return the array with the smallest negative value
+            int smallestNegativeIndex = myArray.indexOf(Collections.max(myArray));
+            return myArray.subList(smallestNegativeIndex, smallestNegativeIndex+1);
+        }
+        //If not all numbers are negative, simply remove the negative numbers. 
+        else{
+            //Removes all negative numbers 
+            myArray.removeIf(value -> value < 0);
+        }
         return myArray;
     }
 
