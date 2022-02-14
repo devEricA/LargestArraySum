@@ -1,4 +1,10 @@
+/*
+    This file is responsible
+    for generating the case of 10 million integers. 
+*/
 
+
+//Imports needed
 import java.util.*;
 import java.math.*;
 import java.io.*;
@@ -13,20 +19,16 @@ public class MaxValueArrayGenerator {
         
         //Loading the file with randomly generated integers
         FileWriter loader = new FileWriter(fileForArrayOfMaxSize);
-
         Random random = new Random();
         loader.write("");
-        for(int x = 0; x<50000000; x++)
+        for(int x = 0; x<10000000; x++)
         {
-            //Formula for generating integers is (max - min) + min;
-            //In this case our range is -9999999 to 9999999 
+            //Generating the integers between -9999999 and 9999999
             loader.append(random.nextInt(9999999 +  9999999) - 9999999 + "\n");
         }
         //Closing the file
         loader.flush();
         loader.close();
-
-
 
     }
 
