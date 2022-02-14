@@ -1,7 +1,6 @@
 # LargestArraySum
 A lab that is about finding a sub array that contains the largest possible sum within an array of integers.
 
-This is a work in progress. 
 # Problem
 Given an array of integers, find and return a sub array that contains the largest possible sum.
 
