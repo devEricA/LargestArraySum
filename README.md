@@ -16,7 +16,7 @@ Given an array of integers, find and return a sub array that contains the larges
 3. [3, 4, 5]
 
 # Explanation Behind Approach
-This is a lab where I could draw up Linear search and be done with it. However, the efficiency of that algorithm falls off as the cases get bigger. Thus, to further test myself, I included the case of 10 million random integers. 
+This is a lab where I could draw up linear search and be done with it. However, the efficiency of that algorithm falls off as the cases get bigger. Thus, to further test myself, I included the case of 10 million random integers. 
 
 The first idea was to use a binary search style method to go through the list and remove the negatives (Lines 17-36 of LargeArraySum.java). That failed because of the fact that whenever the search traverses through the upper half, the original length of the list is used, even if the lower half traversal removes numbers. Attempts to subtract -1 from the list length whenever a removal was made failed because the call stack already saved the original length before any attempts can be made to alter it. 
 
