@@ -76,10 +76,15 @@ public class LargeArraySum {
             biggestArray.add(file.nextInt());
         }
 
+        //Closing the file
+        file.close();
+
         //Printing out all of the cases independently. 
         System.out.println(largestArraySum(testarr, 0, testarr.size()-1).toString());
         System.out.println(largestArraySum(testarrwithAllNegatives, 0, testarrwithAllNegatives.size()-1).toString());
         System.out.println(largestArraySum(testarrwithInitalNegatives, 0, testarrwithInitalNegatives.size()-1).toString());
         System.out.println(largestArraySum(biggestArray, 0, biggestArray.size()-1).toString());
+
+        
     }
 }
