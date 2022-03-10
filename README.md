@@ -16,9 +16,11 @@ Given an array of integers, find and return a sub array that contains the larges
 3. [3, 4, 5]
 
 # Explanation Behind Approach
-This is a lab where I could draw up Linear search and be done with it. However, the efficiency of that algorithm falls off as the cases get bigger. Thus, to further test myself, I included the case of 10 million random integers. 
+A key componet behind this lab is that all negative numbers within a integer list will drag down the sum. Thus, an array with the largest possible sum should not have any negative numbers. In cases where the list contains only negative numbers, we simply keep the "smallest" negative integer. 
 
-The first idea was to use a binary search style method to go through the list and remove the negatives (Lines 17-36 of LargeArraySum.java). That failed because of the fact that whenever the search traverses through the upper half, the original length of the list is used, even if the lower half traversal removes numbers. Attempts to subtract -1 from the list length whenever a removal was made failed because the call stack already saved the original length before any attempts can be made to alter it. 
+This is a lab where I could draw up linear search and be done with it. However, the efficiency of that algorithm falls off as the cases get bigger. Thus, to further test myself, I included the case of 10 million random integers. 
+
+The first idea was to use a binary search style method to go through the list and remove the negatives (Lines 17-36 of LargeArraySum.java). That failed because of the fact that whenever the search traverses through the upper half, the original length of the list is used, even if the lower half traversal removes numbers. Attempts to subtract 1 from the list length whenever a removal was made failed because the call stack already saved the original length, making alterations to that length impossible. 
 
 A scour through the internet revealed the use of [Java streams](https://www.geeksforgeeks.org/stream-in-java/). Streams were chosen because of the fact that they are built in, and thus, had plenty of time to be optimized by many developers.
 
@@ -43,4 +45,4 @@ Optionally, you can compile MaxValueArrayGenerator.java in order to generate a n
 # Additional Notes
 Compiled in a Linux Mint environment via CLI commands <code>javac LargeArraySum.java</code> and <code>java LargeArraySum</code>. 
 
-Developed in Visual Studio Code using openjdk 17.0.2 2022-01-18, 
+Developed in Visual Studio Code using openjdk 17.0.2 2022-01-18
