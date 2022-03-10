@@ -39,7 +39,8 @@ To see the results of this lab, simply compile and run LargeArraySum.java using 
 
 Optionally, you can compile MaxValueArrayGenerator.java in order to generate a new case of 10 million integers.
 
-| :warning: IMPORTANT NOTE |
+| :warning: NOTE |
+|:-------------------------|
 | If you see a WARNING message in the output after creating the new case, open an issue and attach your version of the IntegersForHugeArray.txt file so I can address it!| 
 
 # Additional Notes
