@@ -22,12 +22,25 @@ The first idea was to use a binary search style method to go through the list an
 
 A scour through the internet revealed the use of [Java streams](https://www.geeksforgeeks.org/stream-in-java/). Streams were chosen because of the fact that they are built in, and thus, had plenty of time to be optimized by many developers.
 
+# Results
+Suprisingly, the linear method out performed the stream method for the 10 million case. When I compiled the program, the following output was noted:
+```
+Stream algorithm took 189 ms
+Linear algorithm took 31 ms
+```
+This is likely due to the fact that I didn't take a closer look at the runtimes of the streams utilized within the streaming algorithm. Thus, it's time for me to return to the drawing board. 
+
+_Results may vary to some slight degree on your end due to computer specifications_
+
 # Try it Yourself
 To see the results of this lab, simply compile and run LargeArraySum.java using an IDE of your choice. 
 
-Optionally, you can compile MaxValueArrayGenerator.java in order to generate a new case of 10 million integers. 
+Optionally, you can compile MaxValueArrayGenerator.java in order to generate a new case of 10 million integers.
+
+| :warning: IMPORTANT NOTE |
+| If you see a WARNING message in the output after creating the new case, open an issue and attach your version of the IntegersForHugeArray.txt file so I can address it!| 
 
 # Additional Notes
 Compiled in a Linux Mint environment via CLI commands <code>javac LargeArraySum.java</code> and <code>java LargeArraySum</code>. 
 
-Developed in Visual Studio Code using openjdk 11.0.13 2021-10-19, 
+Developed in Visual Studio Code using openjdk 17.0.2 2022-01-18, 
